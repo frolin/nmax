@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+require 'nmax'
+
+
+
+if ARGV.empty?
+  # Perform the default, it doesn't have to be a Thor task
+  Nmax::NMax.start(ARGV).find_nmax
+else
+  # Start Thor as usual
+  Nmax::NMax.start(ARGV)
+end
