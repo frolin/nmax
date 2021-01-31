@@ -1,12 +1,11 @@
 #!/usr/bin/env ruby
+
 require 'nmax'
 
 
+input_data = STDIN.read.to_s.chomp
+n_max = ARGV.first.to_i
 
-if ARGV.empty?
-  # Perform the default, it doesn't have to be a Thor task
-  Nmax::NMax.start(ARGV).find_nmax
-else
-  # Start Thor as usual
-  Nmax::NMax.start(ARGV)
-end
+raise 'Argument must be an positive integer' if n_max.zero?
+
+Cli::NMax.n_max(input_data, n_max)
